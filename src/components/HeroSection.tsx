@@ -66,7 +66,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ theme, toggleTheme }) 
 
       {/* Hero Heading Container - Elevated styling */}
       <div className="flex-grow flex items-center justify-center relative z-0 mix-blend-difference px-4 sm:px-6">
-        <div className="overflow-hidden w-full text-center">
+        <div className="w-full text-center">
           <FadeIn delay={0.15} y={40} duration={0.8} className="w-full">
             <h1
               className={`hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full select-none mt-6 sm:mt-4 md:-mt-5 ${headingSizeClass}`}

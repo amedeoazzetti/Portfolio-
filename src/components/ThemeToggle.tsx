@@ -47,6 +47,16 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, toggleTheme }) 
           }
         }, intervalTime);
       }, fadeStart);
+
+      // Explicit failsafe for iOS/mobile where volume property is read-only
+      setTimeout(() => {
+        try {
+          audio.pause();
+          audio.currentTime = 0;
+        } catch (e) {
+          console.warn("Failsafe pause error:", e);
+        }
+      }, 1800);
     } catch (error) {
       console.error("Audio playback error:", error);
     }
