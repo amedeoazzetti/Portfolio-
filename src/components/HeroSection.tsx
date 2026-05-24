@@ -22,7 +22,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ theme, toggleTheme }) 
       <Navbar />
 
       {/* Theme Toggle — centered below navbar */}
-      <div className="relative z-50 flex justify-center mt-3 sm:mt-4 pointer-events-auto">
+      <div className="relative z-50 flex justify-center mt-6 sm:mt-8 pointer-events-auto">
         <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
       </div>
 
