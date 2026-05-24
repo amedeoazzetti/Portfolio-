@@ -4,8 +4,62 @@
   --font-sans: "Kanit", sans-serif;
 }
 
+:root {
+  --color-bg: #050507;
+  --color-bg-card: #0F1115;
+  --color-accent: #FFB800;
+  --gradient-heading: linear-gradient(135deg, #E2E8F0 0%, #FFB800 100%);
+  --gradient-btn: linear-gradient(123deg, #090A0D 7%, #1F232B 37%, #FFB800 72%, #A87600 100%);
+  --color-btn-outline: #FFB800;
+  --color-btn-glow: rgba(255, 184, 0, 0.25);
+  --color-btn-inset: #1F232B;
+  --gradient-hero-glow: radial-gradient(circle, rgba(0, 92, 255, 0.2) 0%, rgba(255, 184, 0, 0.06) 50%, transparent 100%);
+  --shadow-avatar: rgba(0, 92, 255, 0.3);
+  --gradient-wip-accent: linear-gradient(to bottom right, rgba(255, 184, 0, 0.06), transparent, rgba(0, 92, 255, 0.04));
+  --gradient-wip-dot: linear-gradient(135deg, #FFB800, #E2E8F0);
+  --gradient-wip-glow: conic-gradient(from 0deg, #FFB800, transparent, #005CFF, transparent, #FFB800, transparent);
+  --color-marquee-sym1: #FFB800;
+  --color-marquee-sym2: #005CFF;
+  --gradient-marquee-line: linear-gradient(90deg, transparent, #005CFF20, #FFB80040, #005CFF20, transparent);
+  --color-contact-haze-l: rgba(255, 184, 0, 0.05);
+  --color-contact-haze-r: rgba(0, 92, 255, 0.06);
+  --color-selection-bg: rgba(255, 184, 0, 0.2);
+  --color-selection-text: #FFB800;
+  --color-marquee-bg-fade: #050507;
+  --color-scrollbar-thumb: #FFB80020;
+  --color-scrollbar-thumb-border: #FFB80040;
+  --color-scrollbar-thumb-hover: #FFB80040;
+}
+
+.theme-joker {
+  --color-bg: #08020F;
+  --color-bg-card: #0A0314;
+  --color-accent: #39FF14;
+  --gradient-heading: linear-gradient(135deg, #39FF14 0%, #9D00FF 100%);
+  --gradient-btn: linear-gradient(123deg, #0A0314 7%, #7A00F7 37%, #39FF14 72%, #FF003C 100%);
+  --color-btn-outline: #39FF14;
+  --color-btn-glow: rgba(57, 255, 20, 0.25);
+  --color-btn-inset: #7A00F7;
+  --gradient-hero-glow: radial-gradient(circle, rgba(157, 0, 255, 0.25) 0%, rgba(57, 255, 20, 0.05) 50%, transparent 100%);
+  --shadow-avatar: rgba(157, 0, 255, 0.4);
+  --gradient-wip-accent: linear-gradient(to bottom right, rgba(122, 0, 247, 0.06), transparent, rgba(57, 255, 20, 0.04));
+  --gradient-wip-dot: linear-gradient(135deg, #7A00F7, #39FF14);
+  --gradient-wip-glow: conic-gradient(from 0deg, #7A00F7, transparent, #39FF14, transparent, #FF003C, transparent);
+  --color-marquee-sym1: #39FF14;
+  --color-marquee-sym2: #FF003C;
+  --gradient-marquee-line: linear-gradient(90deg, transparent, #9D00FF20, #39FF1440, #9D00FF20, transparent);
+  --color-contact-haze-l: rgba(122, 0, 247, 0.05);
+  --color-contact-haze-r: rgba(57, 255, 20, 0.06);
+  --color-selection-bg: rgba(57, 255, 20, 0.2);
+  --color-selection-text: #39FF14;
+  --color-marquee-bg-fade: #08020F;
+  --color-scrollbar-thumb: #39FF1430;
+  --color-scrollbar-thumb-border: #9D00FF40;
+  --color-scrollbar-thumb-hover: #39FF1450;
+}
+
 html, body, #root {
-  background-color: #08020F;
+  background-color: var(--color-bg);
   font-family: "Kanit", sans-serif;
   box-sizing: border-box;
   margin: 0;
@@ -13,17 +67,24 @@ html, body, #root {
   color: #D7E2EA;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
+/* Smooth transitions for theme swapping */
+section, footer, div, span, button, a {
+  transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
 .hero-heading {
-  background: linear-gradient(135deg, #39FF14 0%, #9D00FF 100%);
+  background: var(--gradient-heading);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  transition: background 0.5s ease, -webkit-text-fill-color 0.5s ease;
 }
 
 /* Custom scrollbar to match dark theme design */
@@ -31,14 +92,16 @@ html, body, #root {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #08020F;
+  background: var(--color-bg);
+  transition: background-color 0.5s ease;
 }
 ::-webkit-scrollbar-thumb {
-  background: #39FF1430;
-  border: 1px solid #9D00FF40;
+  background: var(--color-scrollbar-thumb);
+  border: 1px solid var(--color-scrollbar-thumb-border);
   border-radius: 4px;
+  transition: background-color 0.5s ease, border-color 0.5s ease;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #39FF1450;
+  background: var(--color-scrollbar-thumb-hover);
 }
 

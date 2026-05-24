@@ -58,7 +58,7 @@ export const MarqueeSection: React.FC = () => {
     <section
       ref={sectionRef}
       id="marquee-section"
-      className="relative bg-[#08020F] pt-24 sm:pt-32 md:pt-40 pb-10 overflow-hidden w-full select-none"
+      className="relative bg-[var(--color-bg)] pt-24 sm:pt-32 md:pt-40 pb-10 overflow-hidden w-full select-none"
       style={{ contentVisibility: "auto" }}
     >
       {/* Subtle top/bottom fade masks */}
@@ -66,7 +66,7 @@ export const MarqueeSection: React.FC = () => {
         className="absolute inset-0 pointer-events-none z-10"
         style={{
           background:
-            "linear-gradient(90deg, #08020F 0%, transparent 8%, transparent 92%, #08020F 100%)",
+            "linear-gradient(90deg, var(--color-marquee-bg-fade) 0%, transparent 8%, transparent 92%, var(--color-marquee-bg-fade) 100%)",
         }}
       />
 
@@ -88,12 +88,12 @@ export const MarqueeSection: React.FC = () => {
                   key={`r1-${idx}`}
                   className={`flex-shrink-0 ${
                     isSymbol
-                      ? "text-[#39FF14] text-lg sm:text-xl md:text-2xl mx-6 sm:mx-8 md:mx-10"
+                      ? "text-lg sm:text-xl md:text-2xl mx-6 sm:mx-8 md:mx-10 animate-pulse"
                       : "font-black uppercase tracking-tight text-[#D7E2EA]/[0.08] mx-3 sm:mx-4 md:mx-6"
                   }`}
                   style={
                     isSymbol
-                      ? undefined
+                      ? { color: "var(--color-marquee-sym1)" }
                       : { fontSize: "clamp(2.5rem, 7vw, 6rem)", lineHeight: 1.1 }
                   }
                 >
@@ -109,8 +109,7 @@ export const MarqueeSection: React.FC = () => {
           <div
             className="w-full h-px"
             style={{
-              background:
-                "linear-gradient(90deg, transparent, #9D00FF20, #39FF1440, #9D00FF20, transparent)",
+              background: "var(--gradient-marquee-line)"
             }}
           />
         </div>
@@ -132,12 +131,12 @@ export const MarqueeSection: React.FC = () => {
                   key={`r2-${idx}`}
                   className={`flex-shrink-0 ${
                     isSymbol
-                      ? "text-[#FF003C]/60 text-sm sm:text-base md:text-lg mx-6 sm:mx-8 md:mx-10"
+                      ? "text-sm sm:text-base md:text-lg mx-6 sm:mx-8 md:mx-10"
                       : "font-black uppercase tracking-tight mx-3 sm:mx-4 md:mx-6"
                   }`}
                   style={
                     isSymbol
-                      ? undefined
+                      ? { color: "var(--color-marquee-sym2)" }
                       : {
                           fontSize: "clamp(2.5rem, 7vw, 6rem)",
                           lineHeight: 1.1,

@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import HeroSection from "./components/HeroSection";
 import MarqueeSection from "./components/MarqueeSection";
 import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
+import ThemeToggle from "./components/ThemeToggle";
 
 export default function App() {
+  const [theme, setTheme] = useState<"batman" | "joker">("batman");
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "batman" ? "joker" : "batman"));
+  };
+
   return (
-    <div className="w-full min-h-screen bg-[#08020F] text-[#D7E2EA] overflow-x-hidden antialiased selection:bg-[#39FF14]/20 selection:text-[#39FF14]">
+    <div 
+      className={`w-full min-h-screen text-[#D7E2EA] overflow-x-hidden antialiased selection:bg-[var(--color-selection-bg)] selection:text-[var(--color-selection-text)] transition-colors duration-500 ${
+        theme === "joker" ? "theme-joker" : "theme-batman"
+      }`}
+      style={{ backgroundColor: "var(--color-bg)" }}
+    >
       {/* 1. Hero Section */}
       <HeroSection />
 
@@ -22,6 +34,9 @@ export default function App() {
 
       {/* 6. Contact & Footer Section */}
       <ContactSection />
+
+      {/* Dynamic Floating Theme Toggle Switch */}
+      <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
     </div>
   );
 }
