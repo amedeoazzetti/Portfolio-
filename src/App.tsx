@@ -7,7 +7,7 @@ import ContactSection from "./components/ContactSection";
 
 export default function App() {
   return (
-    <div className="w-full min-h-screen bg-[#08020F] text-[#D7E2EA] overflow-x-hidden antialiased selection:bg-[#39FF14]/20 selection:text-[#39FF14]">
+    <div className="w-full min-h-screen bg-[#050507] text-[#D7E2EA] overflow-x-hidden antialiased selection:bg-[#FFB800]/20 selection:text-[#FFB800]">
       {/* 1. Hero Section */}
       <HeroSection />
 

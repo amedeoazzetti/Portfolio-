@@ -1,17 +1,18 @@
-# 🃏 Amedeo's Portfolio - Gotham Joker Edition
+# 🦇 Amedeo's Portfolio - Batman Dark Knight Edition
 
-Un portfolio personale moderno, interattivo e ad alto impatto visivo costruito con **React**, **TypeScript**, **Vite** e **Tailwind CSS (v4)**, personalizzato con una palette di colori ispirata al leggendario nemico di Batman: **il Joker**.
+Un portfolio personale moderno, interattivo e ad alto impatto visivo costruito con **React**, **TypeScript**, **Vite** e **Tailwind CSS (v4)**, personalizzato con una palette di colori e dettagli grafici ispirati a **Batman (il Cavaliere Oscuro)**.
 
-Il design unisce l'atmosfera scura e profonda di Gotham City con accenti viola neon, verde tossico e rosso sorriso, creando un'esperienza utente immersiva e magnetica.
+Questo branch è interamente dedicato al design tattico e mil-spec del protettore di Gotham: sfondi grigio carbonio e nero metallo spazzolato, bagliori HUD blu Gotham notturno ed accenti iconici in oro utility belt.
 
 ---
 
 ## ✨ Caratteristiche Principali
 
-- **Palette Cromatica Custom (Joker Edition)**: Sfondo viola scuro Gotham, gradienti tossici verde/viola, accenti rosso sorriso.
+- **Palette Cromatica Tattica (Batman Edition)**: Sfondo grigio carbone profondo/nero metallo, bagliori HUD azzurro Batcomputer e dettagli dorati utility belt.
 - **Interazioni Magnetiche**: L'avatar 3D segue dolcemente il cursore del mouse tramite un effetto calamita interattivo personalizzato (`Magnet.tsx`).
-- **Typographic Parallax Marquee**: Sezione animata che scorre al variare del scroll della pagina con parole chiave sul 3D e sul Web Development.
-- **Sezione Progetti WIP**: Una card animata super raffinata con glow a gradiente conico e un pallino pulsante che segnala lo stato "Work in Progress" per i progetti in arrivo.
+- **Glow Bat-Segnale**: Una spettacolare combinazione di radial-gradient azzurro Gotham e oro utility belt posizionata dietro l'avatar per simulare il Bat-segnale nel cielo notturno.
+- **HUD Marquee Animato**: Sezione a scorrimento orizzontale parallax con stelle dorate utility belt (`#FFB800`) pulsanti e simboli geometrici hi-tech.
+- **Sezione Progetti WIP Tattica**: Card animata super raffinata con glow a gradiente conico e un pallino pulsante dorato utility belt.
 - **Clean Layout**: Semplificato rimuovendo la sezione dei servizi e della navbar "Prize" per mantenere l'esperienza fluida ed essenziale.
 - **SEO Ready**: Titoli semantici ed elementi ottimizzati per l'accessibilità e la velocità.
 
@@ -57,13 +58,19 @@ Apri il terminale all'interno della cartella principale:
 cd Portfolio
 ```
 
-### 2. Installa le dipendenze
+### 2. Seleziona il branch Batman
+Assicurati di essere sul branch dedicato:
+```bash
+git checkout batman
+```
+
+### 3. Installa le dipendenze
 Installa tutti i pacchetti necessari tramite npm:
 ```bash
 npm install
 ```
 
-### 3. Avvia il server di sviluppo
+### 4. Avvia il server di sviluppo
 Fai partire il server locale per testare il sito in tempo reale:
 ```bash
 npm run dev
@@ -92,9 +99,10 @@ Il progetto è configurato per essere hostato facilmente su [Vercel](https://ver
 
 1. Connetti il tuo repository GitHub a Vercel.
 2. Importa il progetto.
-3. Vercel riconoscerà automaticamente la configurazione di **Vite**.
-4. Clicca su **Deploy**. Ogni push sul branch `main` aggiornerà automaticamente il sito online!
+3. Seleziona il branch `batman` per il deploy di questa versione!
+4. Vercel riconoscerà automaticamente la configurazione di **Vite**.
+5. Clicca su **Deploy**.
 
 ---
 
-🃏 *“Why so serious? Let's build something incredible together!”*
+🦇 *“I am vengeance. I am the night. Let's build something incredible!”*

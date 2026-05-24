@@ -58,7 +58,7 @@ export const MarqueeSection: React.FC = () => {
     <section
       ref={sectionRef}
       id="marquee-section"
-      className="relative bg-[#08020F] pt-24 sm:pt-32 md:pt-40 pb-10 overflow-hidden w-full select-none"
+      className="relative bg-[#050507] pt-24 sm:pt-32 md:pt-40 pb-10 overflow-hidden w-full select-none"
       style={{ contentVisibility: "auto" }}
     >
       {/* Subtle top/bottom fade masks */}
@@ -66,7 +66,7 @@ export const MarqueeSection: React.FC = () => {
         className="absolute inset-0 pointer-events-none z-10"
         style={{
           background:
-            "linear-gradient(90deg, #08020F 0%, transparent 8%, transparent 92%, #08020F 100%)",
+            "linear-gradient(90deg, #050507 0%, transparent 8%, transparent 92%, #050507 100%)",
         }}
       />
 
@@ -88,7 +88,7 @@ export const MarqueeSection: React.FC = () => {
                   key={`r1-${idx}`}
                   className={`flex-shrink-0 ${
                     isSymbol
-                      ? "text-[#39FF14] text-lg sm:text-xl md:text-2xl mx-6 sm:mx-8 md:mx-10"
+                      ? "text-[#FFB800] text-lg sm:text-xl md:text-2xl mx-6 sm:mx-8 md:mx-10 animate-pulse"
                       : "font-black uppercase tracking-tight text-[#D7E2EA]/[0.08] mx-3 sm:mx-4 md:mx-6"
                   }`}
                   style={
@@ -110,7 +110,7 @@ export const MarqueeSection: React.FC = () => {
             className="w-full h-px"
             style={{
               background:
-                "linear-gradient(90deg, transparent, #9D00FF20, #39FF1440, #9D00FF20, transparent)",
+                "linear-gradient(90deg, transparent, #005CFF20, #FFB80040, #005CFF20, transparent)",
             }}
           />
         </div>
@@ -132,7 +132,7 @@ export const MarqueeSection: React.FC = () => {
                   key={`r2-${idx}`}
                   className={`flex-shrink-0 ${
                     isSymbol
-                      ? "text-[#FF003C]/60 text-sm sm:text-base md:text-lg mx-6 sm:mx-8 md:mx-10"
+                      ? "text-[#005CFF]/60 text-sm sm:text-base md:text-lg mx-6 sm:mx-8 md:mx-10"
                       : "font-black uppercase tracking-tight mx-3 sm:mx-4 md:mx-6"
                   }`}
                   style={
