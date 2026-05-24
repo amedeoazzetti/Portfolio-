@@ -5,7 +5,12 @@ import { Magnet } from "./Magnet";
 import { ContactButton } from "./ContactButton";
 import avatarImg from "../image/3Davatar-removebg-preview.png";
 
-export const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+  theme: "batman" | "joker";
+  toggleTheme: () => void;
+}
+
+export const HeroSection: React.FC<HeroSectionProps> = ({ theme, toggleTheme }) => {
   return (
     <section
       id="hero-section"
@@ -13,7 +18,7 @@ export const HeroSection: React.FC = () => {
       style={{ contentVisibility: "auto" }}
     >
       {/* Navbar in Hero */}
-      <Navbar />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
 
       {/* Hero Portait - Centered Absolutely */}
       <div className="absolute left-1/2 -translate-x-1/2 z-10 pointer-events-none sm:pointer-events-auto top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 w-[240px] xs:w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]">

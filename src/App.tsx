@@ -4,7 +4,6 @@ import MarqueeSection from "./components/MarqueeSection";
 import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
-import ThemeToggle from "./components/ThemeToggle";
 
 export default function App() {
   const [theme, setTheme] = useState<"batman" | "joker">("batman");
@@ -21,7 +20,7 @@ export default function App() {
       style={{ backgroundColor: "var(--color-bg)" }}
     >
       {/* 1. Hero Section */}
-      <HeroSection />
+      <HeroSection theme={theme} toggleTheme={toggleTheme} />
 
       {/* 2. Marquee Section */}
       <MarqueeSection />
@@ -34,9 +33,7 @@ export default function App() {
 
       {/* 6. Contact & Footer Section */}
       <ContactSection />
-
-      {/* Dynamic Floating Theme Toggle Switch */}
-      <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
     </div>
   );
 }
+
