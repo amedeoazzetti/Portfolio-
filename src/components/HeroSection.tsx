@@ -22,10 +22,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ theme, toggleTheme }) 
       <Navbar />
 
       {/* Theme Toggle — centered below navbar */}
-      <div className="relative z-50 flex justify-center mt-3 sm:mt-4">
-        <FadeIn delay={0.1} y={-15} duration={0.6}>
-          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-        </FadeIn>
+      <div className="relative z-50 flex justify-center mt-3 sm:mt-4 pointer-events-auto">
+        <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
       </div>
 
       {/* Hero Portait - Centered Absolutely */}
