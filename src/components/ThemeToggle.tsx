@@ -23,10 +23,30 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, toggleTheme }) 
     // Play corresponding theme audio
     try {
       const audio = new Audio(nextMode === "joker" ? jokerLaugh : batmanWhoosh);
-      audio.volume = 0.55; // Good balance, not too loud or too quiet
+      const initialVolume = 0.55;
+      audio.volume = initialVolume;
       audio.play().catch((err) => {
         console.warn("Audio autoplay blocked by browser:", err);
       });
+
+      // Smoothly fade out the audio so it ends exactly when the popup disappears (1800ms)
+      const fadeStart = 1350; // Start fading at 1.35 seconds
+      const fadeDuration = 450; // Fade out over 450ms (ends at 1.8s)
+      const intervalTime = 30; // Update volume every 30ms
+      const steps = fadeDuration / intervalTime;
+      const volumeStep = initialVolume / steps;
+
+      setTimeout(() => {
+        const fadeInterval = setInterval(() => {
+          if (audio.volume > volumeStep) {
+            audio.volume = Math.max(0, audio.volume - volumeStep);
+          } else {
+            audio.volume = 0;
+            audio.pause();
+            clearInterval(fadeInterval);
+          }
+        }, intervalTime);
+      }, fadeStart);
     } catch (error) {
       console.error("Audio playback error:", error);
     }
