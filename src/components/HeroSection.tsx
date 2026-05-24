@@ -69,7 +69,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ theme, toggleTheme }) 
         <div className="w-full text-center">
           <FadeIn delay={0.15} y={40} duration={0.8} className="w-full">
             <h1
-              className={`hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full select-none mt-6 sm:mt-4 md:-mt-5 ${headingSizeClass}`}
+              className={`hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full select-none -mt-20 sm:-mt-8 md:-mt-5 ${headingSizeClass}`}
             >
               {headingText}
             </h1>
