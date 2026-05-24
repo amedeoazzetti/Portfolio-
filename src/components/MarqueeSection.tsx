@@ -1,40 +1,75 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const row1Words = [
-  "3D DESIGN",
-  "✦",
-  "BRANDING",
-  "✦",
-  "WEB DEVELOPMENT",
-  "✦",
-  "MOTION",
-  "✦",
-  "UI / UX",
-  "✦",
-  "CREATIVE DIRECTION",
-  "✦",
-];
+interface MarqueeSectionProps {
+  theme?: "batman" | "joker";
+}
 
-const row2Words = [
-  "VISUAL IDENTITY",
-  "◆",
-  "ANIMATION",
-  "◆",
-  "INTERACTION",
-  "◆",
-  "STRATEGY",
-  "◆",
-  "CONCEPT",
-  "◆",
-  "DIGITAL ART",
-  "◆",
-];
+export const MarqueeSection: React.FC<MarqueeSectionProps> = ({ theme = "batman" }) => {
+  const isJoker = theme === "joker";
 
-// Triple for seamless infinite loop
-const row1Tripled = [...row1Words, ...row1Words, ...row1Words];
-const row2Tripled = [...row2Words, ...row2Words, ...row2Words];
+  const row1Words = isJoker
+    ? [
+        "GIOCHI 3D IMPAZZITI",
+        "✦",
+        "BRANDING ASSURDO",
+        "✦",
+        "HACKING CODICE",
+        "✦",
+        "MOTION CAOTICO",
+        "✦",
+        "UI/UX IPNOTICA",
+        "✦",
+        "DIREZIONE DIABOLICA",
+        "✦",
+      ]
+    : [
+        "MODELLAZIONE TATTICA",
+        "✦",
+        "BAT-IDENTITY",
+        "✦",
+        "BATCOMPUTER CODE",
+        "✦",
+        "MOVIMENTI NELL'OMBRA",
+        "✦",
+        "BAT-INTERFACCIA",
+        "✦",
+        "DIREZIONE STRATEGICA",
+        "✦",
+      ];
 
-export const MarqueeSection: React.FC = () => {
+  const row2Words = isJoker
+    ? [
+        "SMILE IDENTITY",
+        "◆",
+        "ANIMAZIONE FRENETICA",
+        "◆",
+        "INTERAZIONE FOLLE",
+        "◆",
+        "STRATEGIA DIABOLICA",
+        "◆",
+        "IDEA ESPLOSIVA",
+        "◆",
+        "ARTE PSICHEDELICA",
+        "◆",
+      ]
+    : [
+        "EMBLEMA TATTICO",
+        "◆",
+        "ANIMAZIONE SILENZIOSA",
+        "◆",
+        "RISPOSTA RAPIDA",
+        "◆",
+        "PIANO D'AZIONE",
+        "◆",
+        "CONCETTO MILITARE",
+        "◆",
+        "ARTE OSCURA",
+        "◆",
+      ];
+
+  // Triple for seamless infinite loop
+  const row1Tripled = [...row1Words, ...row1Words, ...row1Words];
+  const row2Tripled = [...row2Words, ...row2Words, ...row2Words];
   const sectionRef = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
 

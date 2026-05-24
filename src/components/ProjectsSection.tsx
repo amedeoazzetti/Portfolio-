@@ -2,7 +2,19 @@ import React from "react";
 import { motion } from "motion/react";
 import { FadeIn } from "./FadeIn";
 
-export const ProjectsSection: React.FC = () => {
+interface ProjectsSectionProps {
+  theme?: "batman" | "joker";
+}
+
+export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ theme = "batman" }) => {
+  const isJoker = theme === "joker";
+
+  const titleText = isJoker ? "I MIEI TRUCCHI" : "MISSIONI SEGRETE";
+  const wipTitleText = isJoker ? "SORPRESA IN ARRIVO!" : "BATCAVERNA: FILE CRITTOGRAFATI";
+  const wipSubtitleText = isJoker 
+    ? "I miei piani diabolici e i miei giocattoli preferiti sono ancora sotto chiave! Torna quando la festa sarà iniziata... HAHAHA!"
+    : "Sto catalogando le mie tecnologie nel server protetto. I database dei progetti saranno decrittografati a breve. Resta in allerta.";
+
   return (
     <section
       id="projects-section"
@@ -16,7 +28,7 @@ export const ProjectsSection: React.FC = () => {
             className="hero-heading font-black uppercase text-center tracking-tight leading-none"
             style={{ fontSize: "clamp(3rem, 12vw, 160px)" }}
           >
-            Project
+            {titleText}
           </h2>
         </FadeIn>
 
@@ -41,11 +53,11 @@ export const ProjectsSection: React.FC = () => {
               className="font-black uppercase tracking-tight text-[#D7E2EA] leading-none mb-4"
               style={{ fontSize: "clamp(1.8rem, 5vw, 3.5rem)" }}
             >
-              Work in Progress
+              {wipTitleText}
             </h3>
 
             <p className="text-[#D7E2EA]/50 text-sm sm:text-base md:text-lg font-light tracking-wide max-w-md leading-relaxed">
-              I miei progetti saranno disponibili a breve. Resta sintonizzato per gli aggiornamenti.
+              {wipSubtitleText}
             </p>
 
             {/* Decorative animated border glow */}

@@ -121,14 +121,18 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ theme = "batman" }) 
             className="hero-heading font-black uppercase leading-none tracking-tight text-center"
             style={{ fontSize: "clamp(3rem, 12vw, 160px)" }}
           >
-            About me
+            {isJoker ? "WHO I AM?!" : "SECRET IDENTITY"}
           </h2>
         </FadeIn>
 
         {/* Scroll Reveal Text Block */}
         <div className="mb-16 sm:mb-20 md:mb-24 w-full">
           <AnimatedText
-            text="Sono uno studente di informatica con una forte passione per lo sviluppo web e le tecnologie digitali. Mi occupo di programmazione, progettazione di siti web e sperimentazione con strumenti di automazione e intelligenza artificiale. Ho un approccio pratico: imparo velocemente nuove tecnologie e le applico subito in contesti reali, con l'obiettivo di migliorare costantemente. Let's build something incredible together!"
+            text={
+              isJoker
+                ? "Cresciuto nel folle labirinto dell'informatica, mi diverto a scardinare il web e creare spettacolari giochetti digitali! Mescolo righe di codice impazzito, siti web eccentrici ed esperimenti esplosivi con automazioni e folli intelligenze artificiali. Il mio trucco? Imparo a una velocità spaventosa e butto tutto nella mischia per vedere l'effetto che fa in tempo reale! Sei pronto a scatenare il panico e creare qualcosa di incredibilmente folle?"
+                : "Addestrato nella logica e nell'informatica, sviluppo interfacce web avanzate come fossero strumenti tattici per dominare la rete. Programmo codice sicuro, progetto architetture digitali e piloto strumenti di intelligenza artificiale integrando tutto nel mio arsenale personale. Agisco con precisione: assimilo all'istante nuove tecnologie e le applico sul campo per risolvere problemi reali nell'ombra. Uniamo le forze per forgiare qualcosa di leggendario."
+            }
             className="text-[#D7E2EA] font-medium leading-relaxed max-w-[560px] mx-auto"
             style={{ fontSize: "clamp(1rem, 2vw, 1.35rem)" } as any}
           />

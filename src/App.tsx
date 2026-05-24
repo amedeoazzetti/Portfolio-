@@ -23,16 +23,16 @@ export default function App() {
       <HeroSection theme={theme} toggleTheme={toggleTheme} />
 
       {/* 2. Marquee Section */}
-      <MarqueeSection />
+      <MarqueeSection theme={theme} />
 
       {/* 3. About Section */}
       <AboutSection theme={theme} />
 
       {/* 4. Projects Section */}
-      <ProjectsSection />
+      <ProjectsSection theme={theme} />
 
       {/* 6. Contact & Footer Section */}
-      <ContactSection />
+      <ContactSection theme={theme} />
     </div>
   );
 }

@@ -3,7 +3,13 @@ import { Mail, Instagram, ArrowUp, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import { FadeIn } from "./FadeIn";
 
-export const ContactSection: React.FC = () => {
+interface ContactSectionProps {
+  theme?: "batman" | "joker";
+}
+
+export const ContactSection: React.FC<ContactSectionProps> = ({ theme = "batman" }) => {
+  const isJoker = theme === "joker";
+
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -11,6 +17,31 @@ export const ContactSection: React.FC = () => {
   const socials = [
     { name: "Instagram", url: "https://www.instagram.com/azzetti.amedeo", icon: <Instagram className="w-5 h-5" /> },
   ];
+
+  // Dynamic texts based on theme
+  const availableText = isJoker 
+    ? "LIBERO DI COMBINARE GUAI (DISPONIBILE FREELANCE)" 
+    : "DISPONIBILE PER ALLEANZE STRATEGICHE (FREELANCE)";
+
+  const ctaText = isJoker 
+    ? "Fai un patto col diavolo!" 
+    : "Diamo vita al tuo piano d'azione";
+
+  const descText = isJoker
+    ? "Hacker del codice e prestigiatore del web: trasformo idee noiose in giostre digitali folli, interattive ed elettrizzanti!"
+    : "Ingegnere del codice e sviluppatore web: converto idee ambiziose in fortezze digitali stabili, moderne e interattive.";
+
+  const coordsText = isJoker 
+    ? "Canali della frequenza pazza" 
+    : "Frequenze di comunicazione";
+
+  const backToTopText = isJoker 
+    ? "Fai un salto in alto" 
+    : "Ritorna alla base";
+
+  const creditText = isJoker 
+    ? "CRAFTATO CON DIABOLICA FOLLIA" 
+    : "FORGIATO CON PRECISIONE MILITARE";
 
   return (
     <footer
@@ -36,12 +67,12 @@ export const ContactSection: React.FC = () => {
             <FadeIn delay={0} y={20}>
               <div className="flex items-center gap-2 text-[#D7E2EA]/55 text-xs sm:text-sm uppercase tracking-widest font-mono">
                 <Sparkles className="w-4 h-4" style={{ color: "var(--color-accent)" }} />
-                available for freelance work
+                {availableText}
               </div>
             </FadeIn>
             <FadeIn delay={0.1} y={20}>
               <h2 className="text-[#D7E2EA] font-semibold text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight leading-none mt-2">
-                Let&apos;s craft your vision
+                {ctaText}
               </h2>
             </FadeIn>
           </div>
@@ -69,14 +100,14 @@ export const ContactSection: React.FC = () => {
               AMEDEO
             </h3>
             <p className="text-[#D7E2EA]/60 uppercase tracking-wide text-xs sm:text-sm font-light leading-relaxed max-w-[280px]">
-              Studente di informatica e web developer, trasformo idee in esperienze digitali moderne e interattive.
+              {descText}
             </p>
           </div>
 
           {/* Col 2: Social Links */}
           <div className="flex flex-col gap-4">
             <h4 className="text-[#D7E2EA]/40 text-xs sm:text-sm uppercase tracking-widest font-mono select-none">
-              Social Coordinates
+              {coordsText}
             </h4>
             <div className="flex gap-4">
               {socials.map((social) => (
@@ -115,7 +146,7 @@ export const ContactSection: React.FC = () => {
               className="flex items-center gap-2 group text-[#D7E2EA]/75 hover:text-[#FFFFFF] transition-colors duration-300 cursor-pointer text-xs sm:text-sm uppercase tracking-widest font-mono"
               whileHover={{ x: 2 }}
             >
-              Back to top
+              {backToTopText}
               <span 
                 className="w-10 h-10 rounded-full border border-[#D7E2EA]/10 flex items-center justify-center transition-colors duration-350 bg-[#D7E2EA]/5"
                 onMouseEnter={(e) => {
@@ -136,7 +167,7 @@ export const ContactSection: React.FC = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-10 border-t border-[#D7E2EA]/10 text-[#D7E2EA]/40 text-xs tracking-wider select-none">
           <span>&copy; {new Date().getFullYear()} AMEDEO. ALL RIGHTS RESERVED.</span>
           <span className="font-light hover:text-[#D7E2EA] transition-colors duration-200">
-            CRAFTED WITH PRECISION
+            {creditText}
           </span>
         </div>
 

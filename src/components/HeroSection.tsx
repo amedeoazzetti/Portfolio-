@@ -12,6 +12,13 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ theme, toggleTheme }) => {
+  const isJoker = theme === "joker";
+
+  const headingText = isJoker ? "HI, I'm AMEDEO! HAHA!" : "Hi, i'm amedeo";
+  const subtitleText = isJoker
+    ? "Sono Amedeo. Adoro hackerare le AI per scatenare un delizioso caos digitale!"
+    : "Sono Amedeo. Plasmando codice e intelligenze artificiali nell'ombra del web.";
+
   return (
     <section
       id="hero-section"
@@ -60,7 +67,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ theme, toggleTheme }) 
             <h1
               className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[9vw] sm:text-[10vw] md:text-[11vw] lg:text-[12vw] select-none mt-6 sm:mt-4 md:-mt-5"
             >
-              Hi, i&apos;m amedeo
+              {headingText}
             </h1>
           </FadeIn>
         </div>
@@ -75,7 +82,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ theme, toggleTheme }) 
               className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug"
               style={{ fontSize: "clamp(0.75rem, 1.2vw, 1.25rem)" }}
             >
-              Sono Amedeo, un ragazzo a cui piace giocare con le AI
+              {subtitleText}
             </p>
           </FadeIn>
         </div>
