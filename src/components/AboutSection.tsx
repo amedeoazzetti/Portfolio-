@@ -7,7 +7,7 @@ export const AboutSection: React.FC = () => {
   return (
     <section
       id="about-section"
-      className="relative min-h-screen w-full bg-[#050507] flex flex-col justify-center items-center px-5 sm:px-8 md:px-10 py-20 overflow-hidden"
+      className="relative min-h-screen w-full bg-[var(--color-bg)] flex flex-col justify-center items-center px-5 sm:px-8 md:px-10 py-20 overflow-hidden"
       style={{ contentVisibility: "auto" }}
     >
       {/* Absolute Decorative 3D Images in Corners */}

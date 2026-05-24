@@ -17,12 +17,18 @@ export const ContactSection: React.FC = () => {
   return (
     <footer
       id="contact-section"
-      className="relative bg-[#050507] px-6 md:px-12 pt-20 pb-12 overflow-hidden border-t border-[#D7E2EA]/10 w-full"
+      className="relative bg-[var(--color-bg)] px-6 md:px-12 pt-20 pb-12 overflow-hidden border-t border-[#D7E2EA]/10 w-full"
       style={{ contentVisibility: "auto" }}
     >
       {/* Visual background ambient haze */}
-      <div className="absolute right-0 bottom-0 w-[450px] h-[450px] bg-[radial-gradient(circle,rgba(0,92,255,0.06)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute left-0 top-1/4 w-[350px] h-[350px] bg-[radial-gradient(circle,rgba(255,184,0,0.05)_0%,transparent_70%)] pointer-events-none" />
+      <div 
+        className="absolute right-0 bottom-0 w-[450px] h-[450px] pointer-events-none" 
+        style={{ background: "radial-gradient(circle, var(--color-contact-haze-r) 0%, transparent 70%)" }}
+      />
+      <div 
+        className="absolute left-0 top-1/4 w-[350px] h-[350px] pointer-events-none" 
+        style={{ background: "radial-gradient(circle, var(--color-contact-haze-l) 0%, transparent 70%)" }}
+      />
 
       <div className="max-w-6xl mx-auto flex flex-col gap-12 relative z-10">
 
@@ -31,7 +37,7 @@ export const ContactSection: React.FC = () => {
           <div className="flex flex-col gap-2">
             <FadeIn delay={0} y={20}>
               <div className="flex items-center gap-2 text-[#D7E2EA]/55 text-xs sm:text-sm uppercase tracking-widest font-mono">
-                <Sparkles className="w-4 h-4 text-[#FFB800]" />
+                <Sparkles className="w-4 h-4" style={{ color: "var(--color-accent)" }} />
                 available for freelance work
               </div>
             </FadeIn>
@@ -48,7 +54,7 @@ export const ContactSection: React.FC = () => {
               href="mailto:azzetti.amedeo@gmail.com"
               className="inline-flex items-center gap-3 bg-[#D7E2EA]/5 hover:bg-[#D7E2EA]/15 text-[#D7E2EA] px-6 py-4 rounded-full border border-[#D7E2EA]/15 transition-all duration-300 pointer-events-auto select-none"
             >
-              <Mail className="w-5 h-5 text-[#FFB800]" />
+              <Mail className="w-5 h-5" style={{ color: "var(--color-accent)" }} />
               <span className="font-semibold uppercase tracking-wider text-sm">
                 azzetti.amedeo@gmail.com
               </span>
@@ -82,8 +88,18 @@ export const ContactSection: React.FC = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full flex items-center justify-center border border-[#D7E2EA]/20 text-[#D7E2EA]/80 hover:text-[#FFFFFF] hover:border-[#FFB800] transition-all duration-300"
-                  whileHover={{ scale: 1.1, backgroundColor: "rgba(255,184,0,0.12)" }}
+                  className="w-11 h-11 rounded-full flex items-center justify-center border border-[#D7E2EA]/20 text-[#D7E2EA]/80 hover:text-[#FFFFFF] transition-all duration-300"
+                  style={{ "--hover-border": "var(--color-accent)" } as any}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = "var(--color-accent)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = "rgba(215, 226, 234, 0.2)";
+                  }}
+                  whileHover={{ 
+                    scale: 1.1, 
+                    backgroundColor: "var(--color-contact-haze-l)"
+                  }}
                   whileTap={{ scale: 0.95 }}
                   title={social.name}
                 >
@@ -102,7 +118,15 @@ export const ContactSection: React.FC = () => {
               whileHover={{ x: 2 }}
             >
               Back to top
-              <span className="w-10 h-10 rounded-full border border-[#D7E2EA]/10 flex items-center justify-center group-hover:border-[#FFB800] transition-colors duration-350 bg-[#D7E2EA]/5">
+              <span 
+                className="w-10 h-10 rounded-full border border-[#D7E2EA]/10 flex items-center justify-center transition-colors duration-350 bg-[#D7E2EA]/5"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "var(--color-accent)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(215, 226, 234, 0.1)";
+                }}
+              >
                 <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform duration-300" />
               </span>
             </motion.button>
