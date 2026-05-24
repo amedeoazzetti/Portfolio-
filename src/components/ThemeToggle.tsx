@@ -1,5 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import batmanLogo from "../image/batmanlogo.jpg";
+import jokerLogo from "../image/Joker-Logo.png";
 
 interface ThemeToggleProps {
   theme: "batman" | "joker";
@@ -220,27 +222,19 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, toggleTheme }) 
         {/* Left icon (Batman) — visible when in Joker mode */}
         <motion.div
           className="absolute left-[8px] top-1/2 -translate-y-1/2 pointer-events-none"
-          animate={{ opacity: isJoker ? 0.35 : 0 }}
+          animate={{ opacity: isJoker ? 0.4 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <svg viewBox="0 0 24 24" fill="#FFB800" className="w-[14px] h-[14px]">
-            <path d="M12 4c-.5 0-1 .3-1.2.6C10 6 9.2 7 8 7.5c-1.5.6-3 .3-4.5-.5-.3-.2-.7 0-.7.4.2 2.5 1.2 4.5 3 5.8.5.3.5.8.2 1.2-.8 1-1.2 2.2-1 3.5.05.3.3.5.6.4 1.5-.5 2.8-1.5 3.5-2.8.2-.4.6-.5 1-.3.6.3 1.2.4 1.9.4s1.3-.1 1.9-.4c.4-.2.8 0 1 .3.7 1.3 2 2.3 3.5 2.8.3.1.55-.1.6-.4.2-1.3-.2-2.5-1-3.5-.3-.4-.3-.9.2-1.2 1.8-1.3 2.8-3.3 3-5.8 0-.4-.4-.6-.7-.4-1.5.8-3 1.1-4.5.5-1.2-.5-2-1.5-2.8-2.9C13 4.3 12.5 4 12 4z" />
-          </svg>
+          <img src={batmanLogo} alt="" className="w-[16px] h-[16px] object-contain rounded-full" />
         </motion.div>
 
-        {/* Right icon (Clown) — visible when in Batman mode */}
+        {/* Right icon (Joker) — visible when in Batman mode */}
         <motion.div
           className="absolute right-[8px] top-1/2 -translate-y-1/2 pointer-events-none"
-          animate={{ opacity: isJoker ? 0 : 0.35 }}
+          animate={{ opacity: isJoker ? 0 : 0.4 }}
           transition={{ duration: 0.3 }}
         >
-          <svg viewBox="0 0 24 24" fill="none" className="w-[14px] h-[14px]">
-            <circle cx="12" cy="12" r="9" stroke="#39FF14" strokeWidth="1.5" />
-            <path d="M8 8.5l1.5 1.5m0-1.5l-1.5 1.5" stroke="#39FF14" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M14.5 8.5l1.5 1.5m0-1.5l-1.5 1.5" stroke="#39FF14" strokeWidth="1.5" strokeLinecap="round" />
-            <circle cx="12" cy="12.5" r="1" fill="#39FF14" />
-            <path d="M7.5 15c1 2 3 3 4.5 3s3.5-1 4.5-3" stroke="#39FF14" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
+          <img src={jokerLogo} alt="" className="w-[16px] h-[16px] object-contain rounded-full" />
         </motion.div>
 
         {/* Sliding knob */}
@@ -292,19 +286,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, toggleTheme }) 
                 exit={{ scale: 0, rotate: 180, opacity: 0 }}
                 transition={{ duration: 0.3, ease: "backOut" }}
               >
-                {/* Clown face */}
-                <svg viewBox="0 0 24 24" fill="none" className="w-[18px] h-[18px]">
-                  {/* Face outline */}
-                  <circle cx="12" cy="12" r="9" stroke="#050507" strokeWidth="1.5" fill="none" />
-                  {/* Left eye - X shape */}
-                  <path d="M7.5 8.5l2 2m0-2l-2 2" stroke="#050507" strokeWidth="1.8" strokeLinecap="round" />
-                  {/* Right eye - X shape */}
-                  <path d="M14.5 8.5l2 2m0-2l-2 2" stroke="#050507" strokeWidth="1.8" strokeLinecap="round" />
-                  {/* Big crazy smile */}
-                  <path d="M7 14.5c1 2.5 3.5 3.5 5 3.5s4-1 5-3.5" stroke="#050507" strokeWidth="1.8" strokeLinecap="round" fill="none" />
-                  {/* Nose - red dot */}
-                  <circle cx="12" cy="12.5" r="1.2" fill="#050507" />
-                </svg>
+                <img src={jokerLogo} alt="Joker" className="w-[20px] h-[20px] object-contain" />
               </motion.div>
             ) : (
               <motion.div
@@ -314,10 +296,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, toggleTheme }) 
                 exit={{ scale: 0, rotate: -180, opacity: 0 }}
                 transition={{ duration: 0.3, ease: "backOut" }}
               >
-                {/* Bat silhouette */}
-                <svg viewBox="0 0 24 24" fill="#050507" className="w-[18px] h-[18px]">
-                  <path d="M12 4c-.5 0-1 .3-1.2.6C10 6 9.2 7 8 7.5c-1.5.6-3 .3-4.5-.5-.3-.2-.7 0-.7.4.2 2.5 1.2 4.5 3 5.8.5.3.5.8.2 1.2-.8 1-1.2 2.2-1 3.5.05.3.3.5.6.4 1.5-.5 2.8-1.5 3.5-2.8.2-.4.6-.5 1-.3.6.3 1.2.4 1.9.4s1.3-.1 1.9-.4c.4-.2.8 0 1 .3.7 1.3 2 2.3 3.5 2.8.3.1.55-.1.6-.4.2-1.3-.2-2.5-1-3.5-.3-.4-.3-.9.2-1.2 1.8-1.3 2.8-3.3 3-5.8 0-.4-.4-.6-.7-.4-1.5.8-3 1.1-4.5.5-1.2-.5-2-1.5-2.8-2.9C13 4.3 12.5 4 12 4z" />
-                </svg>
+                <img src={batmanLogo} alt="Batman" className="w-[20px] h-[20px] object-contain rounded-full" />
               </motion.div>
             )}
           </AnimatePresence>
