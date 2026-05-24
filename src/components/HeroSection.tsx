@@ -19,6 +19,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ theme, toggleTheme }) 
     ? "Sono Amedeo. Adoro hackerare le AI per scatenare un delizioso caos digitale!"
     : "Sono Amedeo. Plasmando codice e intelligenze artificiali nell'ombra del web.";
 
+  const headingSizeClass = isJoker 
+    ? "text-[6.2vw] sm:text-[6.8vw] md:text-[7.6vw] lg:text-[8.4vw]" 
+    : "text-[9vw] sm:text-[10vw] md:text-[11vw] lg:text-[12vw]";
+
   return (
     <section
       id="hero-section"
@@ -65,7 +69,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ theme, toggleTheme }) 
         <div className="overflow-hidden w-full text-center">
           <FadeIn delay={0.15} y={40} duration={0.8} className="w-full">
             <h1
-              className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[9vw] sm:text-[10vw] md:text-[11vw] lg:text-[12vw] select-none mt-6 sm:mt-4 md:-mt-5"
+              className={`hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full select-none mt-6 sm:mt-4 md:-mt-5 ${headingSizeClass}`}
             >
               {headingText}
             </h1>
