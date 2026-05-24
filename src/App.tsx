@@ -27,7 +27,7 @@ export default function App() {
       <MarqueeSection />
 
       {/* 3. About Section */}
-      <AboutSection />
+      <AboutSection theme={theme} />
 
       {/* 4. Projects Section */}
       <ProjectsSection />

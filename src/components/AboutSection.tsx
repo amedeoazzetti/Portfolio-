@@ -3,63 +3,112 @@ import { FadeIn } from "./FadeIn";
 import { AnimatedText } from "./AnimatedText";
 import { ContactButton } from "./ContactButton";
 
-export const AboutSection: React.FC = () => {
+// Import Batman 3D Assets
+import batTopLeft from "../image/batman_top_left.png";
+import batTopRight from "../image/batman_top_right.png";
+import batBottomLeft from "../image/batman_bottom_left.png";
+import batBottomRight from "../image/batman_bottom_right.png";
+
+// Import Joker 3D Assets
+import jokerTopLeft from "../image/joker_top_left.png";
+import jokerTopRight from "../image/joker_top_right.png";
+import jokerBottomLeft from "../image/joker_bottom_left.png";
+import jokerBottomRight from "../image/joker_bottom_right.png";
+
+interface AboutSectionProps {
+  theme?: "batman" | "joker";
+}
+
+export const AboutSection: React.FC<AboutSectionProps> = ({ theme = "batman" }) => {
+  const isJoker = theme === "joker";
+
+  // Select assets based on active theme
+  const images = {
+    topLeft: isJoker ? jokerTopLeft : batTopLeft,
+    topRight: isJoker ? jokerTopRight : batTopRight,
+    bottomLeft: isJoker ? jokerBottomLeft : batBottomLeft,
+    bottomRight: isJoker ? jokerBottomRight : batBottomRight,
+  };
+
+  const alts = {
+    topLeft: isJoker ? "3D Joker playing card decoration" : "3D Bat-Signal projector decoration",
+    topRight: isJoker ? "3D Joker laughing gas spray can" : "3D Batarang weapon decoration",
+    bottomLeft: isJoker ? "3D crazy Joker smile decoration" : "3D Batman cowl mask decoration",
+    bottomRight: isJoker ? "3D sinister Jack-in-the-box decoration" : "3D Batman grapnel gun decoration",
+  };
+
   return (
     <section
       id="about-section"
-      className="relative min-h-screen w-full bg-[var(--color-bg)] flex flex-col justify-center items-center px-5 sm:px-8 md:px-10 py-20 overflow-hidden"
+      className="relative min-h-screen w-full bg-[var(--color-bg)] flex flex-col justify-center items-center px-5 sm:px-8 md:px-10 py-20 overflow-hidden transition-colors duration-500"
       style={{ contentVisibility: "auto" }}
     >
-      {/* Absolute Decorative 3D Images in Corners */}
+      {/* Absolute Decorative Dynamic 3D Images in Corners */}
 
-      {/* Top-Left Moon Icon */}
-      <div className="absolute top-[4%] left-[1%] sm:left-[2%] md:left-[4%] z-0 select-none pointer-events-none">
+      {/* Top-Left Dynamic 3D Asset */}
+      <div className="absolute top-[6%] left-[1%] sm:left-[2%] md:left-[3%] z-0 select-none pointer-events-none w-[130px] sm:w-[170px] md:w-[220px]">
         <FadeIn delay={0.1} x={-80} y={0} duration={0.9}>
           <img
-            src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/moon_icon.11395d36.png"
-            alt="3D floating Moon icon decoration"
+            key={`${theme}-tl`}
+            src={images.topLeft}
+            alt={alts.topLeft}
             referrerPolicy="no-referrer"
-            className="w-[120px] sm:w-[160px] md:w-[210px] h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(255,255,255,0.05)] animate-bounce duration-[4s]"
-            style={{ animationDuration: "5s" }}
+            className="w-full h-auto object-contain mix-blend-screen filter drop-shadow-[0_10px_30px_rgba(255,255,255,0.02)] animate-bounce"
+            style={{ 
+              animationDuration: isJoker ? "5.5s" : "4.5s",
+              transition: "transform 0.5s ease" 
+            }}
           />
         </FadeIn>
       </div>
 
-      {/* Bottom-Left 3D Object */}
-      <div className="absolute bottom-[8%] left-[3%] sm:left-[6%] md:left-[10%] z-0 select-none pointer-events-none">
+      {/* Bottom-Left Dynamic 3D Asset */}
+      <div className="absolute bottom-[6%] left-[2%] sm:left-[4%] md:left-[6%] z-0 select-none pointer-events-none w-[110px] sm:w-[150px] md:w-[200px]">
         <FadeIn delay={0.25} x={-80} y={0} duration={0.9}>
           <img
-            src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/p59_1.4659672e.png"
-            alt="3D floating glass object decoration"
+            key={`${theme}-bl`}
+            src={images.bottomLeft}
+            alt={alts.bottomLeft}
             referrerPolicy="no-referrer"
-            className="w-[100px] sm:w-[140px] md:w-[180px] h-auto object-contain animate-pulse"
-            style={{ animationDuration: "6s" }}
+            className="w-full h-auto object-contain mix-blend-screen filter drop-shadow-[0_10px_30px_rgba(255,255,255,0.02)] animate-pulse"
+            style={{ 
+              animationDuration: isJoker ? "4s" : "6s",
+              transition: "transform 0.5s ease"
+            }}
           />
         </FadeIn>
       </div>
 
-      {/* Top-Right Lego Icon */}
-      <div className="absolute top-[4%] right-[1%] sm:right-[2%] md:right-[4%] z-0 select-none pointer-events-none">
+      {/* Top-Right Dynamic 3D Asset */}
+      <div className="absolute top-[6%] right-[1%] sm:right-[2%] md:right-[3%] z-0 select-none pointer-events-none w-[130px] sm:w-[170px] md:w-[220px]">
         <FadeIn delay={0.15} x={80} y={0} duration={0.9}>
           <img
-            src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/lego_icon-1.703bb594.png"
-            alt="3D floating Lego icon decoration"
+            key={`${theme}-tr`}
+            src={images.topRight}
+            alt={alts.topRight}
             referrerPolicy="no-referrer"
-            className="w-[120px] sm:w-[160px] md:w-[210px] h-auto object-contain animate-bounce"
-            style={{ animationDuration: "4s" }}
+            className="w-full h-auto object-contain mix-blend-screen filter drop-shadow-[0_10px_30px_rgba(255,255,255,0.02)] animate-bounce"
+            style={{ 
+              animationDuration: isJoker ? "4.8s" : "5.2s",
+              transition: "transform 0.5s ease"
+            }}
           />
         </FadeIn>
       </div>
 
-      {/* Bottom-Right 3D Group */}
-      <div className="absolute bottom-[8%] right-[3%] sm:right-[6%] md:right-[10%] z-0 select-none pointer-events-none">
+      {/* Bottom-Right Dynamic 3D Asset */}
+      <div className="absolute bottom-[6%] right-[2%] sm:right-[4%] md:right-[6%] z-0 select-none pointer-events-none w-[140px] sm:w-[185px] md:w-[240px]">
         <FadeIn delay={0.3} x={80} y={0} duration={0.9}>
           <img
-            src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/Group_134-1.2e04f3ce.png"
-            alt="3D floating elements group decoration"
+            key={`${theme}-br`}
+            src={images.bottomRight}
+            alt={alts.bottomRight}
             referrerPolicy="no-referrer"
-            className="w-[130px] sm:w-[170px] md:w-[220px] h-auto object-contain animate-spin"
-            style={{ animationDuration: "14s" }}
+            className="w-full h-auto object-contain mix-blend-screen filter drop-shadow-[0_10px_30px_rgba(255,255,255,0.02)] animate-spin"
+            style={{ 
+              animationDuration: isJoker ? "22s" : "32s",
+              transition: "transform 0.5s ease"
+            }}
           />
         </FadeIn>
       </div>
