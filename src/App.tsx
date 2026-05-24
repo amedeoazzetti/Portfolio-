@@ -27,7 +27,7 @@ export default function App() {
 
   // Dynamic Title Update based on active theme
   useEffect(() => {
-    document.title = theme === "joker" ? "Amedeo | Joker Mode 🃏" : "Amedeo | Batman Mode 🦇";
+    document.title = theme === "joker" ? "Amedeo | Joker Mode" : "Amedeo | Batman Mode";
   }, [theme]);
 
   return (
