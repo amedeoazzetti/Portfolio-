@@ -1,6 +1,6 @@
 {
-  "name": "Jack -- 3D Creator",
-  "description": "An interactive, scroll-driven portfolio landing page for Jack, a 3D Creator, built using React, TypeScript, Tailwind CSS, Motion, and Lucide Icons.",
+  "name": "Amedeo Portfolio",
+  "description": "An interactive, scroll-driven portfolio landing page for Amedeo, a 3D Creator, built using React, TypeScript, Tailwind CSS, Motion, and Lucide Icons.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
