@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Instagram, Linkedin, ArrowUp, Sparkles, Globe } from "lucide-react";
+import { Mail, Instagram, ArrowUp, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import { FadeIn } from "./FadeIn";
 
@@ -9,9 +9,7 @@ export const ContactSection: React.FC = () => {
   };
 
   const socials = [
-    { name: "Instagram", url: "https://instagram.com", icon: <Instagram className="w-5 h-5" /> },
-    { name: "LinkedIn", url: "https://linkedin.com", icon: <Linkedin className="w-5 h-5" /> },
-    { name: "Dribbble", url: "https://dribbble.com", icon: <Globe className="w-5 h-5 font-light" /> },
+    { name: "Instagram", url: "https://www.instagram.com/azzetti.amedeo", icon: <Instagram className="w-5 h-5" /> },
   ];
 
   return (
