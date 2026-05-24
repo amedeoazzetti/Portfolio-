@@ -20,7 +20,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ theme = "batman"
 
   // Dynamic texts based on theme
   const availableText = isJoker 
-    ? "LIBERO DI COMBINARE GUAI (DISPONIBILE FREELANCE)" 
+    ? "LIBERO DI COMBINARE GUAI PER TE (DISPONIBILE FREELANCE)" 
     : "DISPONIBILE PER ALLEANZE STRATEGICHE (FREELANCE)";
 
   const ctaText = isJoker 
