@@ -32,14 +32,14 @@ export const ContactButton: React.FC<ContactButtonProps> = ({
       onClick={handleClick}
       className={`relative rounded-full font-medium uppercase tracking-widest text-[#FFFFFF] select-none cursor-pointer overflow-hidden transition-all duration-300 ${className}`}
       style={{
-        background: "linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%)",
-        boxShadow: "0px 4px 4px rgba(181, 1, 167, 0.25), inset 4px 4px 12px #7721B1",
-        outline: "2px solid #FFFFFF",
+        background: "linear-gradient(123deg, #0A0314 7%, #7A00F7 37%, #39FF14 72%, #FF003C 100%)",
+        boxShadow: "0px 4px 4px rgba(57, 255, 20, 0.25), inset 4px 4px 12px #7A00F7",
+        outline: "2px solid #39FF14",
         outlineOffset: "-3px",
       }}
       whileHover={{
         scale: 1.05,
-        boxShadow: "0px 6px 12px rgba(181, 1, 167, 0.4), inset 4px 4px 12px #7721B1",
+        boxShadow: "0px 6px 12px rgba(57, 255, 20, 0.4), inset 4px 4px 12px #7A00F7",
         filter: "brightness(1.1)",
       }}
       whileTap={{ scale: 0.95 }}

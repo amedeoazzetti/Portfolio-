@@ -6,7 +6,7 @@ export const ProjectsSection: React.FC = () => {
   return (
     <section
       id="projects-section"
-      className="relative bg-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 pt-24 pb-32 -mt-10 sm:-mt-12 md:-mt-14 z-15 w-full"
+      className="relative bg-[#08020F] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 pt-24 pb-32 -mt-10 sm:-mt-12 md:-mt-14 z-15 w-full"
       style={{ contentVisibility: "auto" }}
     >
       <div className="max-w-6xl mx-auto flex flex-col items-center">
@@ -22,16 +22,16 @@ export const ProjectsSection: React.FC = () => {
 
         {/* Work in Progress Card */}
         <FadeIn delay={0.2} y={30} className="w-full max-w-3xl">
-          <div className="border-2 border-[#D7E2EA]/20 bg-[#0C0C0C] rounded-[35px] sm:rounded-[45px] md:rounded-[55px] p-10 sm:p-14 md:p-20 flex flex-col items-center justify-center text-center relative overflow-hidden">
+          <div className="border-2 border-[#D7E2EA]/10 bg-[#0A0314] rounded-[35px] sm:rounded-[45px] md:rounded-[55px] p-10 sm:p-14 md:p-20 flex flex-col items-center justify-center text-center relative overflow-hidden">
             {/* Subtle gradient accent */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#B600A8]/[0.04] via-transparent to-[#D7E2EA]/[0.02] pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#7A00F7]/[0.06] via-transparent to-[#39FF14]/[0.04] pointer-events-none" />
 
             {/* Animated pulsing dot */}
             <motion.div
               animate={{ scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               className="w-4 h-4 rounded-full mb-8"
-              style={{ background: "linear-gradient(135deg, #B600A8, #D7E2EA)" }}
+              style={{ background: "linear-gradient(135deg, #7A00F7, #39FF14)" }}
             />
 
             <h3
@@ -49,8 +49,8 @@ export const ProjectsSection: React.FC = () => {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute -top-32 -right-32 w-64 h-64 rounded-full opacity-[0.03] pointer-events-none"
-              style={{ background: "conic-gradient(from 0deg, #B600A8, transparent, #D7E2EA, transparent)" }}
+              className="absolute -top-32 -right-32 w-64 h-64 rounded-full opacity-[0.05] pointer-events-none"
+              style={{ background: "conic-gradient(from 0deg, #7A00F7, transparent, #39FF14, transparent, #FF003C, transparent)" }}
             />
           </div>
         </FadeIn>

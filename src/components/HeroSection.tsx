@@ -9,7 +9,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       id="hero-section"
-      className="relative h-screen w-full flex flex-col justify-between overflow-hidden bg-[#0C0C0C]"
+      className="relative h-screen w-full flex flex-col justify-between overflow-hidden bg-[#08020F]"
       style={{ contentVisibility: "auto" }}
     >
       {/* Navbar in Hero */}
@@ -17,6 +17,9 @@ export const HeroSection: React.FC = () => {
 
       {/* Hero Portait - Centered Absolutely */}
       <div className="absolute left-1/2 -translate-x-1/2 z-10 pointer-events-none sm:pointer-events-auto top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 w-[240px] xs:w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]">
+        {/* Glow effect behind the avatar */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(157,0,255,0.25)_0%,rgba(57,255,20,0.05)_50%,transparent_100%)] blur-[40px] pointer-events-none -z-10 w-[140%] h-[140%] -left-[20%] -top-[20%]" />
+        
         <FadeIn delay={0.6} y={30} duration={0.9} className="flex justify-center select-none">
           <Magnet
             padding={150}
@@ -29,7 +32,7 @@ export const HeroSection: React.FC = () => {
               src={avatarImg}
               alt="Portrait of Amedeo"
               referrerPolicy="no-referrer"
-              className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+              className="w-full h-auto object-contain drop-shadow-[0_0_60px_rgba(157,0,255,0.4)]"
             />
           </Magnet>
         </FadeIn>
