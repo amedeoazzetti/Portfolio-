@@ -3,6 +3,7 @@ import { Navbar } from "./Navbar";
 import { FadeIn } from "./FadeIn";
 import { Magnet } from "./Magnet";
 import { ContactButton } from "./ContactButton";
+import { ThemeToggle } from "./ThemeToggle";
 import avatarImg from "../image/3Davatar-removebg-preview.png";
 
 interface HeroSectionProps {
@@ -18,7 +19,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ theme, toggleTheme }) 
       style={{ contentVisibility: "auto" }}
     >
       {/* Navbar in Hero */}
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <Navbar />
+
+      {/* Theme Toggle — centered below navbar */}
+      <div className="relative z-50 flex justify-center mt-3 sm:mt-4">
+        <FadeIn delay={0.1} y={-15} duration={0.6}>
+          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+        </FadeIn>
+      </div>
 
       {/* Hero Portait - Centered Absolutely */}
       <div className="absolute left-1/2 -translate-x-1/2 z-10 pointer-events-none sm:pointer-events-auto top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 w-[240px] xs:w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]">
