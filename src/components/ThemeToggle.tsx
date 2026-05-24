@@ -3,6 +3,11 @@ import { motion, AnimatePresence } from "motion/react";
 import batmanLogo from "../image/batmanlogo.jpg";
 import jokerLogo from "../image/Joker-Logo.png";
 
+// @ts-ignore
+import jokerLaugh from "../audio/joker-laugh.mp3";
+// @ts-ignore
+import batmanWhoosh from "../audio/batman-whoosh.mp3";
+
 interface ThemeToggleProps {
   theme: "batman" | "joker";
   toggleTheme: () => void;
@@ -14,6 +19,18 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, toggleTheme }) 
 
   const handleToggle = useCallback(() => {
     const nextMode = isJoker ? "batman" : "joker";
+
+    // Play corresponding theme audio
+    try {
+      const audio = new Audio(nextMode === "joker" ? jokerLaugh : batmanWhoosh);
+      audio.volume = 0.55; // Good balance, not too loud or too quiet
+      audio.play().catch((err) => {
+        console.warn("Audio autoplay blocked by browser:", err);
+      });
+    } catch (error) {
+      console.error("Audio playback error:", error);
+    }
+
     toggleTheme();
     setPopup({ show: true, mode: nextMode });
     setTimeout(() => {
