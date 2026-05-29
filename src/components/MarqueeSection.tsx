@@ -1,71 +1,35 @@
 import React, { useEffect, useRef, useState } from "react";
 
-interface MarqueeSectionProps {
-  theme?: "batman" | "joker";
-}
+export const MarqueeSection: React.FC = () => {
+  const row1Words = [
+    "WEB DEVELOPMENT",
+    "✦",
+    "UI/UX DESIGN",
+    "✦",
+    "MODELLAZIONE 3D",
+    "✦",
+    "MOTION DESIGN",
+    "✦",
+    "AI & AUTOMAZIONE",
+    "✦",
+    "BRAND IDENTITY",
+    "✦",
+  ];
 
-export const MarqueeSection: React.FC<MarqueeSectionProps> = ({ theme = "batman" }) => {
-  const isJoker = theme === "joker";
-
-  const row1Words = isJoker
-    ? [
-        "GIOCHI 3D IMPAZZITI",
-        "✦",
-        "BRANDING ASSURDO",
-        "✦",
-        "HACKING CODICE",
-        "✦",
-        "MOTION CAOTICO",
-        "✦",
-        "UI/UX IPNOTICA",
-        "✦",
-        "DIREZIONE DIABOLICA",
-        "✦",
-      ]
-    : [
-        "MODELLAZIONE TATTICA",
-        "✦",
-        "BAT-IDENTITY",
-        "✦",
-        "BATCOMPUTER CODE",
-        "✦",
-        "MOVIMENTI NELL'OMBRA",
-        "✦",
-        "BAT-INTERFACCIA",
-        "✦",
-        "DIREZIONE STRATEGICA",
-        "✦",
-      ];
-
-  const row2Words = isJoker
-    ? [
-        "SMILE IDENTITY",
-        "◆",
-        "ANIMAZIONE FRENETICA",
-        "◆",
-        "INTERAZIONE FOLLE",
-        "◆",
-        "STRATEGIA DIABOLICA",
-        "◆",
-        "IDEA ESPLOSIVA",
-        "◆",
-        "ARTE PSICHEDELICA",
-        "◆",
-      ]
-    : [
-        "EMBLEMA TATTICO",
-        "◆",
-        "ANIMAZIONE SILENZIOSA",
-        "◆",
-        "RISPOSTA RAPIDA",
-        "◆",
-        "PIANO D'AZIONE",
-        "◆",
-        "CONCETTO MILITARE",
-        "◆",
-        "ARTE OSCURA",
-        "◆",
-      ];
+  const row2Words = [
+    "FRONTEND ENGINEERING",
+    "◆",
+    "ANIMAZIONI FLUIDE",
+    "◆",
+    "PERFORMANCE",
+    "◆",
+    "ARCHITETTURA PULITA",
+    "◆",
+    "RESPONSIVE DESIGN",
+    "◆",
+    "ATTENZIONE AI DETTAGLI",
+    "◆",
+  ];
 
   // Triple for seamless infinite loop
   const row1Tripled = [...row1Words, ...row1Words, ...row1Words];

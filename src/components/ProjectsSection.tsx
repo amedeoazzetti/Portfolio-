@@ -2,18 +2,11 @@ import React from "react";
 import { motion } from "motion/react";
 import { FadeIn } from "./FadeIn";
 
-interface ProjectsSectionProps {
-  theme?: "batman" | "joker";
-}
-
-export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ theme = "batman" }) => {
-  const isJoker = theme === "joker";
-
-  const titleText = isJoker ? "I MIEI TRUCCHI" : "MISSIONI SEGRETE";
-  const wipTitleText = isJoker ? "SORPRESA IN ARRIVO!" : "BATCAVERNA: FILE CRITTOGRAFATI";
-  const wipSubtitleText = isJoker 
-    ? "I miei piani diabolici e i miei giocattoli preferiti sono ancora sotto chiave! Torna quando la festa sarà iniziata... HAHAHA!"
-    : "Sto catalogando le mie tecnologie nel server protetto. I database dei progetti saranno decrittografati a breve. Resta in allerta.";
+export const ProjectsSection: React.FC = () => {
+  const titleText = "PROGETTI";
+  const wipTitleText = "PROGETTI IN ARRIVO";
+  const wipSubtitleText =
+    "Sto preparando una selezione dei miei lavori migliori. I progetti saranno pubblicati a breve.";
 
   return (
     <section

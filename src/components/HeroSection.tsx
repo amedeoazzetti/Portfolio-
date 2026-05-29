@@ -3,25 +3,15 @@ import { Navbar } from "./Navbar";
 import { FadeIn } from "./FadeIn";
 import { Magnet } from "./Magnet";
 import { ContactButton } from "./ContactButton";
-import { ThemeToggle } from "./ThemeToggle";
 import avatarImg from "../image/3Davatar-removebg-preview.png";
 
-interface HeroSectionProps {
-  theme: "batman" | "joker";
-  toggleTheme: () => void;
-}
+export const HeroSection: React.FC = () => {
+  const headingText = "Hi, i'm amedeo";
+  const subtitleText =
+    "Sono Amedeo. Sviluppo interfacce web moderne e soluzioni basate su intelligenza artificiale.";
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ theme, toggleTheme }) => {
-  const isJoker = theme === "joker";
-
-  const headingText = isJoker ? "HI, I'm AMEDEO! HAHA!" : "Hi, i'm amedeo";
-  const subtitleText = isJoker
-    ? "Sono Amedeo. Adoro hackerare le AI per scatenare un delizioso caos digitale!"
-    : "Sono Amedeo. Plasmando codice e intelligenze artificiali nell'ombra del web.";
-
-  const headingSizeClass = isJoker 
-    ? "text-[6.2vw] sm:text-[6.8vw] md:text-[7.6vw] lg:text-[8.4vw]" 
-    : "text-[9vw] sm:text-[10vw] md:text-[11vw] lg:text-[12vw]";
+  const headingSizeClass =
+    "text-[9vw] sm:text-[10vw] md:text-[11vw] lg:text-[12vw]";
 
   return (
     <section
@@ -31,11 +21,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ theme, toggleTheme }) 
     >
       {/* Navbar in Hero */}
       <Navbar />
-
-      {/* Theme Toggle — centered below navbar */}
-      <div className="relative z-50 flex justify-center mt-6 sm:mt-8 pointer-events-auto">
-        <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-      </div>
 
       {/* Hero Portait - Centered Absolutely */}
       <div className="absolute left-1/2 -translate-x-1/2 z-10 pointer-events-none sm:pointer-events-auto top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 w-[240px] xs:w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]">

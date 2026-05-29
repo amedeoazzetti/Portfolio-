@@ -3,13 +3,7 @@ import { Mail, Instagram, ArrowUp, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import { FadeIn } from "./FadeIn";
 
-interface ContactSectionProps {
-  theme?: "batman" | "joker";
-}
-
-export const ContactSection: React.FC<ContactSectionProps> = ({ theme = "batman" }) => {
-  const isJoker = theme === "joker";
-
+export const ContactSection: React.FC = () => {
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -18,30 +12,18 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ theme = "batman"
     { name: "Instagram", url: "https://www.instagram.com/azzetti.amedeo", icon: <Instagram className="w-5 h-5" /> },
   ];
 
-  // Dynamic texts based on theme
-  const availableText = isJoker 
-    ? "LIBERO DI COMBINARE GUAI PER TE (DISPONIBILE FREELANCE)" 
-    : "DISPONIBILE PER ALLEANZE STRATEGICHE (FREELANCE)";
+  const availableText = "DISPONIBILE PER COLLABORAZIONI FREELANCE";
 
-  const ctaText = isJoker 
-    ? "Fai un patto col diavolo!" 
-    : "Diamo vita al tuo piano d'azione";
+  const ctaText = "Diamo vita al tuo progetto";
 
-  const descText = isJoker
-    ? "Hacker del codice e prestigiatore del web: trasformo idee noiose in giostre digitali folli, interattive ed elettrizzanti!"
-    : "Ingegnere del codice e sviluppatore web: converto idee ambiziose in fortezze digitali stabili, moderne e interattive.";
+  const descText =
+    "Sviluppatore web e ingegnere del software: trasformo idee ambiziose in prodotti digitali moderni, solidi e interattivi.";
 
-  const coordsText = isJoker 
-    ? "Canali della frequenza pazza" 
-    : "Frequenze di comunicazione";
+  const coordsText = "Contatti";
 
-  const backToTopText = isJoker 
-    ? "Fai un salto in alto" 
-    : "Ritorna alla base";
+  const backToTopText = "Torna su";
 
-  const creditText = isJoker 
-    ? "CRAFTATO CON DIABOLICA FOLLIA" 
-    : "FORGIATO CON PRECISIONE MILITARE";
+  const creditText = "PROGETTATO E SVILUPPATO CON CURA";
 
   return (
     <footer
